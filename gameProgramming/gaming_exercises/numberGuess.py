@@ -37,8 +37,6 @@ print("""
 
 # CPU SECRET NUMBER GENERATION 
 
-secretNumber = random.randint(0, 20)
-print(secretNumber)
 
 # GAME LOOP
 print( "You need to guess a number from 0 to 20 and you have four guesses.\nIf you guess it right get point. If you  guess it wrong you try again.") 
@@ -51,22 +49,16 @@ while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     # Diffculty code needs to be BEFORE the round starts.
     # pass -- Tells pyhtons to skip this block of code 
     print (f"Player Score: {playerScore}\nCPU Score: {cpuScore}. \n")
-    secretNumber = random.randint(0, 20)
+    secretNumber = random.randint(rangeMin, rangeMax)
+    print(secretNumber)
 # Whenever you assign a specific value to something, its called " hard coded".
 #print(secretNumber)
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
-    print("Can you guess a two digit number?")
-    if playerGuess == NewSecretNumber:
-    print("Suprise you got it correct!") 
-else: 
-    print("Maybe luck next time")
-
-
-
+    
     numGuesses= 0 
     for guesses in range(4):
         print(f"You have {4-numGuesses} guesses remaining.\n")
-        playerGuess = (input("Type a number from 0 to 20 and press ENTER.\n"))
+        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
         # input() saves all  data as a STRING by default.
         # int() will convert to an INTEGER
         # float() will convert to FLOAT
@@ -85,6 +77,8 @@ else:
     if playerGuess != secretNumber:
         cpuScore += 1
         print("The CPU wins a point since you ran out of guesses.\n")
+
+
 if playerScore >= 3:
     print("Winner, winner, chicken dinner! You scored 3 points first\n") 
 else: 
