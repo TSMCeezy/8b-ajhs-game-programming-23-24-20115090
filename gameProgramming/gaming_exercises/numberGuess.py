@@ -26,8 +26,9 @@ difficulty = ""
 rangeMin = -1
 rangeMax = -1
 numAttempts = -1  
-NewSecretNumber = 25
+NewSecretNumber = 25 # DELETE, NOT NEEDED. 
 
+# Finish the menu string! 
 print(""" 
      
       
@@ -50,14 +51,15 @@ while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     # pass -- Tells pyhtons to skip this block of code 
     print (f"Player Score: {playerScore}\nCPU Score: {cpuScore}. \n")
     secretNumber = random.randint(rangeMin, rangeMax)
+    # Your secretNumber is always -1 since you do not have the difficulty code finished yet! 
     print(secretNumber)
 # Whenever you assign a specific value to something, its called " hard coded".
 #print(secretNumber)
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
     
     numGuesses= 0 
-    for guesses in range(4):
-        print(f"You have {4-numGuesses} guesses remaining.\n")
+    for guesses in range(4): # Update this line to use a variable instead of just 4.  
+        print(f"You have {4-numGuesses} guesses remaining.\n") # Update this line to use a variable instead of just 4.  
         playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
         # input() saves all  data as a STRING by default.
         # int() will convert to an INTEGER
