@@ -26,9 +26,9 @@ difficulty = ""
 rangeMin = -1
 rangeMax = -1
 numAttempts = -1  
-NewSecretNumber = 25 # DELETE, NOT NEEDED. 
+NewSecretNumber = 25 
+difficulty = ""
 
-# Finish the menu string! 
 print(""" 
      
       
@@ -38,29 +38,38 @@ print("""
 
 # CPU SECRET NUMBER GENERATION 
 
+secretNumber = random.randint(0, 20)
+print(secretNumber)
 
 # GAME LOOP
 print( "You need to guess a number from 0 to 20 and you have four guesses.\nIf you guess it right get point. If you  guess it wrong you try again.") 
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH MATCH.
 # print() an explanation of your three difficulty levels.
 # Use input() to store difficulty in difficulty variable
-# assign values to numAttempts, rangeMin, and rangeMax based on choice
+# assign values to numAttempts, rangeMin, and rangeMax based on choice 
+
+difficulty = " choose your difficulty "
+playerName = input("What should I call you?\n")
+print(f"Hello {playerName}, how are you?")
+if difficulty == "easy":
+numAttempts = -1 
 
 while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     # Diffculty code needs to be BEFORE the round starts.
     # pass -- Tells pyhtons to skip this block of code 
     print (f"Player Score: {playerScore}\nCPU Score: {cpuScore}. \n")
-    secretNumber = random.randint(rangeMin, rangeMax)
-    # Your secretNumber is always -1 since you do not have the difficulty code finished yet! 
-    print(secretNumber)
+    secretNumber = random.randint(0, 20)
 # Whenever you assign a specific value to something, its called " hard coded".
 #print(secretNumber)
 # ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
     
+
+
+
     numGuesses= 0 
-    for guesses in range(4): # Update this line to use a variable instead of just 4.  
-        print(f"You have {4-numGuesses} guesses remaining.\n") # Update this line to use a variable instead of just 4.  
-        playerGuess = int(input("Type a number from 0 to 20 and press ENTER.\n"))
+    for guesses in range(4):
+        print(f"You have {4-numGuesses} guesses remaining.\n")
+        playerGuess = (input("Type a number from 0 to 20 and press ENTER.\n"))
         # input() saves all  data as a STRING by default.
         # int() will convert to an INTEGER
         # float() will convert to FLOAT
@@ -79,8 +88,6 @@ while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     if playerGuess != secretNumber:
         cpuScore += 1
         print("The CPU wins a point since you ran out of guesses.\n")
-
-
 if playerScore >= 3:
     print("Winner, winner, chicken dinner! You scored 3 points first\n") 
 else: 
