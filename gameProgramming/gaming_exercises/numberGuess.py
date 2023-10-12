@@ -25,7 +25,7 @@ playerName = ""
 difficulty = ""
 rangeMin = -1
 rangeMax = -1
-numAttempts = -1  
+numAttempts = 5
 NewSecretNumber = 25 
 difficulty = ""
 
@@ -52,7 +52,24 @@ difficulty = " choose your difficulty "
 playerName = input("What should I call you?\n")
 print(f"Hello {playerName}, how are you?")
 if difficulty == "easy":
-numAttempts = -1 
+ numAttempts = 5
+rangeMin = -1
+rangeMax = -1 
+
+if difficulty == "medium":
+    numAttempts = 3
+    rangeMin =  -1
+    rangeMax = -1 
+
+if difficulty == "hard":
+   numAttempts = 2
+   rangeMin = 0
+   rangeMax = 0 
+
+if difficulty == "extremely hard":
+   numAttempts = 1
+   rangeMin = 0 
+   rangeMax = 0 
 
 while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     # Diffculty code needs to be BEFORE the round starts.
@@ -61,7 +78,9 @@ while playerScore != 3 and cpuScore !=3: # START THE MATCH (GAME)
     secretNumber = random.randint(0, 20)
 # Whenever you assign a specific value to something, its called " hard coded".
 #print(secretNumber)
-# ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND.
+# ADD CODE HERE TO CHANGE DIFFICULTY BETWEEN EACH ROUND. 
+
+
     
 
 
