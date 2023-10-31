@@ -1,5 +1,5 @@
 # Hangman game by Jordan Henry , v0.0
-
+import = random
 words = 'cat dog hat pat rat saw sad bed tab pet school uniform microsoft program operate function collection instructions license hangman ironic nauseous coincidental phenomenom onomatopoeia necessary appealing seperate platonic electrons'.split()
 
 # VARIABLE_NAMES in all CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
@@ -32,8 +32,32 @@ HANGMAN_BOARD = ['''
     +---+
      O  |
     /|\ |
-    /\  |
+     /\ |
     =======''']
+
+# PICK WORD FROM LIST
+def getRandomWord(wordList): # Return a random word from the list.
+    wordIndex = random.randint(0,len(wordList)-1)
+    # len(listname) -1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
+    return wordList[wordIndex]
+
+def displayBoard(missedLetters, correctLetters, secretWord):
+    print(HANGMAN_BOARD[len(missedLetters)])
+    print()
+    print('Missed Letters:', end = ' ')
+    for eachLetter in missedLetters:
+        print(eachLetter, end = ' ')
+    print() 
+
+# i = 0 
+# while i < 100:
+#     word = getRandomWord()
+#     print(word)
+#     i += 1
+    
+
+
+
  
 
 
